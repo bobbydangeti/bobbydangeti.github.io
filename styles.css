@@ -1,6 +1,8 @@
 /* ===========================================================
    Design tokens
    Theme: a systems analyst's own process map.
+   Bobby builds workflow diagrams for a living â€” the site borrows
+   that visual language: nodes, connectors, sequence, annotation.
 =========================================================== */
 :root {
   --paper: #F6F4EE;
@@ -99,7 +101,7 @@ h1, h2, h3 {
 .brand:hover { color: var(--pine); }
 .brand .dot { color: var(--ochre); }
 
-.site-nav { display: flex; gap: 28px; align-items: center; }
+.site-nav { display: flex; gap: 28px; }
 .site-nav a {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -125,6 +127,10 @@ h1, h2, h3 {
   background: var(--pine);
   color: var(--paper);
   border-bottom-color: var(--pine);
+}
+.site-nav a.nav-pill[aria-current="page"] {
+  border-color: var(--ochre);
+  color: var(--ochre);
 }
 
 /* ===========================================================
@@ -171,7 +177,7 @@ section { padding: 56px 0; }
 .btn-solid:hover { background: var(--pine-deep); border-color: var(--pine-deep); color: var(--paper); }
 
 /* ===========================================================
-   Hero (home page) — name + photo split layout
+   Hero (home page) â€” name + photo split layout
 =========================================================== */
 .hero {
   padding: 72px 0 48px;
@@ -235,6 +241,9 @@ section { padding: 56px 0; }
   box-shadow: 12px 12px 0 var(--paper-alt), 12px 12px 0 1.5px var(--line);
 }
 
+/* ===========================================================
+   Buttons
+=========================================================== */
 .btn-primary-lg {
   display: inline-flex;
   align-items: center;
@@ -300,7 +309,9 @@ section { padding: 56px 0; }
 }
 
 /* ===========================================================
-   Timeline (resume page)
+   Timeline (resume page) â€” the signature element
+   A vertical process line with a node per role, like the
+   workflow diagrams Bobby builds at work.
 =========================================================== */
 .timeline {
   position: relative;
@@ -343,6 +354,23 @@ section { padding: 56px 0; }
   color: var(--ink-soft);
   margin-top: 4px;
 }
+.role .org-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.role .org-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  padding: 4px;
+  flex-shrink: 0;
+}
+.role .org-row .org { margin-top: 0; }
 .role ul {
   margin: 16px 0 0;
   padding-left: 20px;
@@ -391,7 +419,7 @@ section { padding: 56px 0; }
 .edu-item .org { color: var(--ink-soft); margin-top: 2px; }
 
 /* ===========================================================
-   Project cards
+   Project cards (placeholder content the user will edit)
 =========================================================== */
 .project-grid {
   display: grid;
@@ -493,7 +521,7 @@ section { padding: 56px 0; }
 .site-footer a:hover { color: var(--ochre); }
 
 /* ===========================================================
-   Page intro pattern
+   Page intro pattern (used on resume / projects / contact)
 =========================================================== */
 .page-intro { padding: 52px 0 8px; }
 .page-intro h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); }
